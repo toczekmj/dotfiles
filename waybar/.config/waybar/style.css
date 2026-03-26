@@ -1,0 +1,128 @@
+@define-color red #d65d0e;
+@define-color green #98971a;
+@define-color yellow #83a598;
+@define-color orange #8ec07c;
+@define-color purple #d3869b;
+@define-color cyan #98971a;
+@define-color background-color #504945;
+@define-color border-color #cc241d;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono NF";
+    font-size: 14px;
+    font-weight: bolder;
+    min-height: 25px;
+}
+
+window#waybar {
+    background: @background-color;
+}
+
+window#waybar.solo {
+    background: @background-color;
+}
+
+tooltip {
+    background: @background-color;
+    border: 1px solid @border-color;
+    border-radius: 6px;
+}
+
+tooltip label {
+    color: white;
+}
+
+#workspaces button {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: shade(alpha(@cyan, 1.0), 1.0);
+}
+
+#workspaces button.active {
+    background: shade(alpha(@cyan, 0.2), 1.0);
+    color: shade(alpha(@cyan, 1.0), 1.0);
+}
+
+#workspaces button:hover {
+    color: @background-color;
+    background: shade(alpha(@cyan, 1.0), 1.0);
+}
+
+#window {
+    padding-left: 25px;
+    color: @green;
+}
+
+#tray,
+#privacy,
+#pulseaudio,
+#temperature,
+#cpu,
+#memory,
+#battery,
+#disk,
+#clock,
+#network,
+#bluetooth {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#privacy {
+    color: @background-color;
+    background: shade(alpha(@yellow, 1.0), 1.0);
+}
+
+#network,
+#bluetooth {
+    color: @yellow;
+}
+
+#bluetooth {
+    font-size: 15px;
+}
+
+#pulseaudio {
+    color: @orange;
+}
+
+#pulseaudio.mic {
+    color: @background-color;
+    background: shade(alpha(@orange, 1.0), 1.0);
+}
+
+#pulseaudio.mic.source-muted {
+    color: @orange;
+     background: @background-color;
+}
+
+#battery,
+#temperature,
+#cpu,
+#memory,
+#disk {
+    color: @red;
+}
+
+#battery.warning {
+    color: @background-color;
+    background: shade(alpha(@orange, 1.0), 1.0);
+
+}
+
+#temperature.critical,
+#battery.critical,
+#cpu.critical,
+#memory.critical,
+#disk.critical {
+    color: @background-color;
+    background: shade(alpha(@red, 1.0), 1.0);
+}
+
+
+
+#clock {
+    color: @purple;
+}
