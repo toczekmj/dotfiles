@@ -9,6 +9,8 @@ echo "===> Installing packages"
 packages=(
   git
   niri
+  man-db
+  neovide
   stow
   fish
   neovim
