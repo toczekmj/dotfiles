@@ -1,0 +1,25 @@
+input {
+    keyboard {
+        xkb {
+	    layout "pl"
+        }
+
+        numlock
+	repeat-delay 300
+	repeat-rate 30
+    }
+
+    touchpad {
+        off
+        natural-scroll
+   }
+
+    mouse {
+        // off
+    }
+
+    trackpoint {
+        off
+    }
+}
+
