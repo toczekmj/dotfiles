@@ -1,9 +1,9 @@
-output "eDP-2" {
+output "Iiyama North America PL3480WQ 1222544600616" {
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes
+    // mode "2560x1440@119.998"
     mode "3440x1440@165.000"
     scale 1
     transform "normal"
     position x=1280 y=0
 }
-
 

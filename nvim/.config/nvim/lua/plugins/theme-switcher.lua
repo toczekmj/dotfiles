@@ -11,7 +11,6 @@ return {
           "nord",
           "cyberdream",
           "onedark",
-          "kanagawa",
           "kanagawa-dragon",
           "kanagawa-wave",
           "tokyonight",
@@ -28,6 +27,7 @@ return {
           "cursor-light",
           "cyberdream-light",
           "kanagawa-lotus",
+          "kanagawa",
         },
         livePreview = true,
       })
