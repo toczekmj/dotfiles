@@ -1,3 +1,41 @@
 if status is-interactive
-# Commands to run in interactive sessions can go here
+    # zoxide
+    zoxide init fish | source
+    alias cd="z"
+
+    # bat
+    alias cat="bat"
+
+    # eza
+    alias ls="eza --icons=always --group-directories-first"
+    alias la="eza --icons=always -all --group-directories-first"
+    alias lt="eza --icons=always --group-directories-first -T"
+
+    # fzf
+    alias fzp="fzf --preview 'bat -n --color=always {}'"
+    fzf --fish | source
+
+    # lazygit
+    alias g="lazygit"
+
+    # navi
+    alias n="navi"
+    alias nd="navi --tldr"
+    navi widget fish | source
+
+    # vifm 
+    alias fm="vifm"
+
+    # yazi
+    function y
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        command yazi $argv --cwd-file="$tmp"
+        if read -z cwd <"$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+            builtin cd -- "$cwd"
+        end
+        rm -f -- "$tmp"
+    end
+    # other
+    alias cls="clear"
+    alias pacman="sudo pacman"
 end
