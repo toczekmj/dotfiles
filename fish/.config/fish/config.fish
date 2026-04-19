@@ -23,9 +23,6 @@ if status is-interactive
     alias nd="navi --tldr"
     navi widget fish | source
 
-    # vifm 
-    alias fm="vifm"
-
     # yazi
     function y
         set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -35,6 +32,9 @@ if status is-interactive
         end
         rm -f -- "$tmp"
     end
+
+    # atuin
+    atuin init fish | source
     # other
     alias cls="clear"
     alias pacman="sudo pacman"
