@@ -28,7 +28,7 @@ binds {
     // Default fuzzel - decide between this and rofi
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Tab repeat=false                     { toggle-overview; }
     Mod+Q repeat=false                       { close-window; }
 
