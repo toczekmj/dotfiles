@@ -7,6 +7,7 @@ sudo pacman -Syu --noconfirm
 
 echo "===> Installing packages"
 packages=(
+  base-devel
   git
   niri
   man-db
@@ -25,17 +26,38 @@ packages=(
   fzf
   lazygit
   vifm
+  lazydocker
   yazi
-  riprgep
+  ripgrep
 )
 
+paru_packages=(
+  vial-appimage
+)
+
+# install official repo packages
 sudo pacman -S --needed --noconfirm "${packages[@]}"
+
+# ensure paru is installed
+if ! command -v paru &>/dev/null; then
+  echo "===> Installing paru"
+  temp_dir=$(mktemp -d)
+  git clone https://aur.archlinux.org/paru.git "$temp_dir/paru"
+  cd "$temp_dir/paru" || exit
+  makepkg -si --noconfirm --needed
+  cd ~ || exit
+  rm -rf "$temp_dir"
+fi
 
 echo "===> Cloning dotfiles"
 if [ ! -d "$HOME/.dotfiles" ]; then
   git clone git@gitlab.com:toczekmj/arch-dotfiles.git ~/.dotfiles
 fi
 
+# install AUR packages
+paru -S --needed --noconfirm "${paru_packages[@]}"
+
+# clone dotfiles
 cd ~/.dotfiles
 
 echo "===> Applying dotfiles with stow"

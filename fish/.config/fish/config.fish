@@ -23,6 +23,19 @@ if status is-interactive
     alias nd="navi --tldr"
     navi widget fish | source
 
+    # atuin
+    atuin init fish | source
+
+    # docker 
+    alias docker="sudo docker"
+    alias lazydocker="sudo lazydocker"
+    alias d="docker"
+    alias ld="lazydocker"
+
+    # other
+    alias cls="clear"
+    alias pacman="sudo pacman"
+
     # yazi
     function y
         set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -32,10 +45,4 @@ if status is-interactive
         end
         rm -f -- "$tmp"
     end
-
-    # atuin
-    atuin init fish | source
-    # other
-    alias cls="clear"
-    alias pacman="sudo pacman"
 end
