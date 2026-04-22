@@ -35,6 +35,7 @@ if status is-interactive
     # other
     alias cls="clear"
     alias pacman="sudo pacman"
+    alias yeet="sudo pacman -Rcns"
 
     # yazi
     function y

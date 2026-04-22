@@ -10,6 +10,7 @@ packages=(
   base-devel
   git
   niri
+  gh
   man-db
   neovide
   stow
