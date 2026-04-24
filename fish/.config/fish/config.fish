@@ -23,9 +23,6 @@ if status is-interactive
     alias nd="navi --tldr"
     navi widget fish | source
 
-    # atuin
-    atuin init fish | source
-
     # docker 
     alias docker="sudo docker"
     alias lazydocker="sudo lazydocker"
@@ -35,7 +32,10 @@ if status is-interactive
     # other
     alias cls="clear"
     alias pacman="sudo pacman"
+    alias p="sudo pacman"
     alias yeet="sudo pacman -Rcns"
+    alias get="sudo pacman -S"
+    alias search="sudo pacman -Ss"
 
     # yazi
     function y

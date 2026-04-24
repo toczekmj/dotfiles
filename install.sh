@@ -10,7 +10,7 @@ packages=(
   base-devel
   git
   niri
-  gh
+  github-cli
   man-db
   neovide
   stow
@@ -25,15 +25,22 @@ packages=(
   btop
   navi
   fzf
+  fd
   lazygit
   vifm
   lazydocker
   yazi
   ripgrep
+  tmux
+  bluetui
+  xwayland-satellite
+  nm-connection-editor
 )
 
 paru_packages=(
   vial-appimage
+  waypaper
+  zen-browser
 )
 
 # install official repo packages
@@ -58,13 +65,15 @@ fi
 # install AUR packages
 paru -S --needed --noconfirm "${paru_packages[@]}"
 
-# clone dotfiles
 cd ~/.dotfiles
 
 echo "===> Applying dotfiles with stow"
 for dir in */; do
   stow --restow -t "$HOME" "${dir%/}"
 done
+
+echo "===> Creating tmux config"
+ln -sf "$(pwd)/tmux.conf" ~/.tmux.conf
 
 echo "===> Setting fish as default shell"
 chsh -s /usr/bin/fish

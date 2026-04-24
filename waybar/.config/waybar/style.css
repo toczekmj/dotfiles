@@ -8,51 +8,51 @@
 @define-color border-color #cc241d;
 
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "JetBrainsMono NF";
-    font-size: 14px;
-    font-weight: bolder;
-    min-height: 25px;
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono NF";
+  font-size: 14px;
+  font-weight: bolder;
+  min-height: 25px;
 }
 
 window#waybar {
-    background: @background-color;
+  background: @background-color;
 }
 
 window#waybar.solo {
-    background: @background-color;
+  background: @background-color;
 }
 
 tooltip {
-    background: @background-color;
-    border: 1px solid @border-color;
-    border-radius: 6px;
+  background: @background-color;
+  border: 1px solid @border-color;
+  border-radius: 6px;
 }
 
 tooltip label {
-    color: white;
+  color: white;
 }
 
 #workspaces button {
-    padding-left: 20px;
-    padding-right: 20px;
-    color: shade(alpha(@cyan, 1.0), 1.0);
+  padding-left: 20px;
+  padding-right: 20px;
+  color: shade(alpha(@cyan, 1), 1);
 }
 
 #workspaces button.active {
-    background: shade(alpha(@cyan, 0.2), 1.0);
-    color: shade(alpha(@cyan, 1.0), 1.0);
+  background: shade(alpha(@cyan, 0.2), 1);
+  color: shade(alpha(@cyan, 1), 1);
 }
 
 #workspaces button:hover {
-    color: @background-color;
-    background: shade(alpha(@cyan, 1.0), 1.0);
+  color: @background-color;
+  background: shade(alpha(@cyan, 1), 1);
 }
 
 #window {
-    padding-left: 25px;
-    color: @green;
+  padding-left: 25px;
+  color: @green;
 }
 
 #tray,
@@ -66,36 +66,36 @@ tooltip label {
 #clock,
 #network,
 #bluetooth {
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #privacy {
-    color: @background-color;
-    background: shade(alpha(@yellow, 1.0), 1.0);
+  color: @background-color;
+  background: shade(alpha(@yellow, 1), 1);
 }
 
 #network,
 #bluetooth {
-    color: @yellow;
+  color: @yellow;
 }
 
 #bluetooth {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 #pulseaudio {
-    color: @orange;
+  color: @orange;
 }
 
 #pulseaudio.mic {
-    color: @background-color;
-    background: shade(alpha(@orange, 1.0), 1.0);
+  color: @background-color;
+  background: shade(alpha(@orange, 1), 1);
 }
 
 #pulseaudio.mic.source-muted {
-    color: @orange;
-     background: @background-color;
+  color: @orange;
+  background: @background-color;
 }
 
 #battery,
@@ -103,13 +103,12 @@ tooltip label {
 #cpu,
 #memory,
 #disk {
-    color: @red;
+  color: @red;
 }
 
 #battery.warning {
-    color: @background-color;
-    background: shade(alpha(@orange, 1.0), 1.0);
-
+  color: @background-color;
+  background: shade(alpha(@orange, 1), 1);
 }
 
 #temperature.critical,
@@ -117,12 +116,20 @@ tooltip label {
 #cpu.critical,
 #memory.critical,
 #disk.critical {
-    color: @background-color;
-    background: shade(alpha(@red, 1.0), 1.0);
+  color: @background-color;
+  background: shade(alpha(@red, 1), 1);
 }
 
-
-
 #clock {
-    color: @purple;
+  color: @purple;
+}
+
+menu {
+  border-radius: 8px;
+  background: @background-color;
+  color: @purple;
+  border: 0px;
+}
+menuitem {
+  border-radius: 8px;
 }
