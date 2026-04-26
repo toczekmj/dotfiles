@@ -1,4 +1,5 @@
 binds {
+    Mod+A { spawn "dms" "ipc" "call" "plugins" "toggle" "aiAssistant"; }
     // Some deafult ones
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -19,11 +20,14 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     
     // Rofi needs to be installed first
-    Mod+Space hotkey-overlay-title="Open Rofi" { spawn "rofi" "-show" "drun"; }
-    
+    // Mod+Space hotkey-overlay-title="Open Rofi" { spawn "rofi" "-show" "drun"; }
+    Mod+Space hotkey-overlay-title="Application Launcher" {
+        spawn "dms" "ipc" "call" "spotlight" "toggle";
+    }
+
     // Rofi power menu
     // paru rofi-power-menu 
-    Mod+X hotkey-overlay-title="Open Rofi Power menu" { spawn "rofi" "-show" "power-menu" "-modi" "power-menu:rofi-power-menu"; }
+    // Mod+X hotkey-overlay-title="Open Rofi Power menu" { spawn "rofi" "-show" "power-menu" "-modi" "power-menu:rofi-power-menu"; }
 
     // Default fuzzel - decide between this and rofi
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
@@ -162,4 +166,8 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+    Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+
+    Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
 }

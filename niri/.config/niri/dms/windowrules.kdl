@@ -1,0 +1,20 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1777048416285620237 @name=chrome-nngceckbapebfimnlniiiahkandclblb-Default
+window-rule {
+    match app-id="^chrome-nngceckbapebfimnlniiiahkandclblb-Default$"
+    open-floating true
+}
+
+// @id=wr_1777050094592349676 @name=GParted
+window-rule {
+    match app-id="^GParted$"
+    open-floating true
+}
+
+// @id=wr_1777061495450991045 @name=thunar
+window-rule {
+    match app-id="^thunar$"
+    open-floating true
+}

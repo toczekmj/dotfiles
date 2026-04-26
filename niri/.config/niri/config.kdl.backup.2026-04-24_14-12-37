@@ -1,0 +1,21 @@
+include "layout.kdl"
+include "windowrules.kdl"
+include "monitors.kdl"
+include "keybinds.kdl"
+include "inputs.kdl"
+include "startup.kdl"
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// "Important Hotkeys" pop-up at startup.
+hotkey-overlay {
+  skip-at-startup
+}
+
+// disable hot-corners
+gestures {
+    hot-corners {
+        off
+    }
+}
+
