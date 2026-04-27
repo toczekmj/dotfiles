@@ -21,21 +21,25 @@ if status is-interactive
     # navi
     alias n="navi"
     alias nd="navi --tldr"
-    navi widget fish | source
+    # navi widget fish | source
 
     # docker 
     alias docker="sudo docker"
-    alias lazydocker="sudo lazydocker"
+    # alias lazydocker="sudo lazydocker"
     alias d="docker"
     alias ld="lazydocker"
 
     # other
     alias cls="clear"
     alias pacman="sudo pacman"
-    alias p="sudo pacman"
-    alias yeet="sudo pacman -Rcns"
-    alias get="sudo pacman -S"
-    alias search="sudo pacman -Ss"
+    alias p="sudo zypper"
+
+    alias yeet="sudo zypper --clean-deps"
+    alias get="sudo zypper install"
+    alias search="sudo zypper search"
+
+    # brew
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 
     # yazi
     function y
@@ -47,3 +51,7 @@ if status is-interactive
         rm -f -- "$tmp"
     end
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
